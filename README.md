@@ -25,6 +25,7 @@ def stringUpper(str):
 stringUpper("hello github")
 ```
 ===> THIS IS MY FIRST STRING
+
 ===> HELLO GITHUB
 
 b)  A function that takes a string as an input and returns the UPPERCASED version of that string. Then print that string to the output. 
@@ -36,6 +37,7 @@ def upper (mystring):
 print(upper("this is my second string"))
 ```
 ===> THIS IS MY SECOND STRING
+
 Both cases can give the same result!!! 
 
 c) A function that takes a float as an input, rounds it down to the next integer and then returns the float an the corresponding integer as a tupel.
