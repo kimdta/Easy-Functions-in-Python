@@ -49,3 +49,95 @@ def myfunc (float):
 print(myfunc(3.9))
 ```
 ===> (3.9, 3)
+
+## 3. Addfruit
+
+a) Create a function Addfruit that takes a string as an input and either adds the string to the set;if the set doesn’t contain the string yet, or
+prints “Fruit already in the bag” to the console.
+
+```ruby
+fruitset = set()      #create an empty set
+def addFruit (fruit):
+    """ This function adds fruits to set """
+    if fruit not in fruitset:
+        fruitset.add(fruit.upper())   #to avoid different string (banana and BANANA) being added
+    else:
+        print("Fruit already in the bag")
+
+addFruit("Apple")
+addFruit("Banana")
+addFruit("APPLE")
+```
+===> Fruit already in the bag
+
+```ruby
+for fruit in fruitset:
+    print(fruit)
+```
+===> BANANA
+     APPLE
+
+b) Adding several fruits at a time.  
+
+Function addFruit2 take two fruits as parameters and adds them both to the set. 
+
+```ruby
+def addFruit2 (fruit1, fruit2):
+    if fruit1 not in fruitset:
+        fruitset.add(fruit1.upper())   
+    else:
+        print("Fruit1 already in the bag")
+    if fruit2 not in fruitset:
+        fruitset.add(fruit2.upper())   
+    else:
+        print("Fruit2 already in the bag")
+    
+addFruit2("Apple", "Banana")
+print(fruitset)
+```
+===> {'BANANA', 'APPLE'}
+
+Function addFruit3 takes any number of fruits and add the to the set. Add if it's not in the fuitset, else print "item already in the bag".
+
+```ruby
+def addFruit3(*fruit):    #we might pass 1 or whatever number of fruit 
+    for item in fruit:
+        if item not in fruitset:
+            fruitset.add(item.upper())
+        else:
+            print("item already in the bag")
+
+addFruit3("banana", "apple", "pineapple")
+addFruit3("BANANA")
+```
+===> item already in the bag
+
+## 4. Recursive Function
+Write a recursive function that takes as input two integers “p” and “q” and returns p to the power of q.
+
+```ruby
+def power (p, q):
+    if q == 0:     #recursive base case to avoid p power of negative -> infinitive
+        return 1
+    else:
+        return p *  power(p, q-1)
+
+#ANOTHER EXAMPLE - FACTORIAL RECURSIVE
+
+def factorial (n):
+    if n == 0:           #1 base case
+     else:               #recursive case
+         return n * factorial(n-1)
+```
+## 5. Fibonacci using iterative vs recursive functions
+Write an function that takes an integer “n” as an input and returns the value of the n th Fibonacci number
+- Using iterative function
+
+
+
+
+
+
+
+
+
