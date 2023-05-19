@@ -142,7 +142,7 @@ def fibonacci_iterative(n):
        t = j    
        j = j + i
        i = t    
-       n = n - 1  #decrement n by 1 to prevent the loop going to infinitive
+       n = n - 1  #decrement n by 1 to prevent the loop going to infinity
    return i 
 print(fibonacci_iterative(5))
 ```
@@ -151,7 +151,7 @@ print(fibonacci_iterative(5))
 
 ```ruby
 def fibonacci_recursive(n):
-    if n == 1:                   
+    if n == 1:    #we need AT LEAST 2 base case to avoid going to infinity               
         return 0
     elif n == 2:                    
         return 1
@@ -161,9 +161,33 @@ print(fibonacci_recursive(5))
 ```
 ===> 3
 
+## 6. Higher order function
+Functions can also be considered as an object in Pytho; therefore, references to functions can be passed to other functions. Higher order function takes a function as a parameter and/or return a function. Let's take an example.
 
+Use the filter()-function to create a list that only contains the numbers in “list1” that are divisible by 2
+```ruby
+list1 = [1,2,3,4,5,6,7,8,9]
 
+def divisible_by_two(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+list2 = list(filter(divisible_by_two, list1)) #filter(function-return T/F, data) is a built in function that we can avoid to use loop
+print(list2)
+```
+===> [2, 4, 6, 8]
 
+Differentiate with map()-function which modifies the list without filtering entries
+
+```ruby
+def divisible_by_two(n):
+    return n/2     
+list1 = map(divisible_by_two, list1)
+for i in list1:
+    print (i)
+```
+===> 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5
 
 
 
