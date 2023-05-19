@@ -130,10 +130,36 @@ def factorial (n):
          return n * factorial(n-1)
 ```
 ## 5. Fibonacci using iterative vs recursive functions
-Write an function that takes an integer “n” as an input and returns the value of the n th Fibonacci number
+Write an function that takes an integer “n” as an input and returns the value of the n-th Fibonacci number
+Remind: Fibonacci sequence: 0,1,1,2,3,5,8,13,21,...
 - Using iterative function
 
+```ruby
+def fibonacci_iterative(n):
+   i = 0    
+   j = 1
+   while (n > 1):
+       t = j    
+       j = j + i
+       i = t    
+       n = n - 1  #decrement n by 1 to prevent the loop going to infinitive
+   return i 
+print(fibonacci_iterative(5))
+```
+===> 3
+- Using recursive function
 
+```ruby
+def fibonacci_recursive(n):
+    if n == 1:                   
+        return 0
+    elif n == 2:                    
+        return 1
+    else:
+        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+print(fibonacci_recursive(5))
+```
+===> 3
 
 
 
